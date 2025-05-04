@@ -40,7 +40,9 @@ const closeMenu = () => setIsMenuOpen(false);
 		<>
 			<header
 				className={`flex items-center justify-between w-full px-4 py-4 transition-all duration-300 ease-in-out z-50 sticky top-0 ${
-					isScrolled ? "bg-opacity-30 backdrop-blur-md" : "bg-transparent"
+					isScrolled
+						? "bg-white dark:bg-gray-900 bg-opacity-30 backdrop-blur-md"
+						: "bg-transparent"
 				}`}
 			>
 				<Logo />
@@ -49,11 +51,13 @@ const closeMenu = () => setIsMenuOpen(false);
 				<nav
 					className={`${
 						isMenuOpen
-							? "absolute top-16 left-4 right-4 bg-white dark:bg-black rounded-md shadow-md p-4 z-50"
+							? "absolute top-16 left-4 right-4 bg-gray-100 dark:bg-black rounded-md shadow-2xs p-4 z-50"
 							: "hidden"
 					} md:static md:flex md:items-center md:gap-4 md:bg-transparent`}
 				>
-					<ul className="flex flex-col md:flex-row gap-7 text-gray-200 dark:text-gray-200">
+					<ul
+						className={`flex flex-col md:flex-row gap-7  dark:text-gray-200 ${isScrolled ? "text-gray-900" : "text-white"}`}
+					>
 						<li className="cursor-pointer text-[var(--color-primary)] font-bold">
 							Home
 						</li>
