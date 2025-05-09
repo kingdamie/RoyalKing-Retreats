@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import ShortletFilter from "./components/ShortletFilter";
 
 const images = ["/Hero/hero1.jpg", "/Hero/hero2.jpg", "/Hero/hero3.jpg"];
 
@@ -63,6 +63,8 @@ export default function Home() {
 				</div>
 			</div>
 			{/* statistics section ends */}
+
+			<ShortletFilter/>
 		</main>
 	);
 }
